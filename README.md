@@ -22,7 +22,7 @@ If the last line says "Client VM" instead of "Server VM" then you are running in
 #### Apache Maven 3.1.1 or higher
 * Download from http://maven.apache.org/download.html
 * make sure **mvn** is available in your PATH
-* *_Notice:_* Apache 3.3.3 requires Java 7.
+* **_Notice:_** Apache 3.3.3 requires Java 7.
 
 
 ### Checkout
@@ -31,7 +31,7 @@ Clone the repository and checkout the branch corresponding to your Eclipse versi
 git clone https://github.com/maxeler/eclipse.git
 git checkout R4_4_maintenance
 ```
-### Build:
+### Build
 ```
 cd eclipse.jdt.core/org.eclipse.jdt.core
 mvn -P build-individual-bundles package
