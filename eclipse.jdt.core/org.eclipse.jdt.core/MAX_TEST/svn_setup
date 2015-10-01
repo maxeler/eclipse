@@ -1,0 +1,4 @@
+include $(MAXTEST_INCLUDE)
+
+setup:
+	ant -f build.xml
