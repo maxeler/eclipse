@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2012, 2014 Eclipse Foundation.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Distribution License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/org/documents/edl-v10.php
+
+  Contributors:
+     Igor Fedorenko - initial implementation
+     David Williams - improvements and maintenance
+-->
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.eclipse.platform</groupId>
+  <artifactId>platform-aggregator</artifactId>
+  <version>4.4.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+
+    <module>eclipse-platform-parent</module>
+
+    <module>eclipse.platform.releng.prereqs.sdk</module>
+<!--
+    <module>eclipse.jdt/</module>
+-->
+    <module>eclipse.jdt.core</module>
+<!--
+    <module>eclipse.jdt.core.binaries</module>
+    <module>eclipse.jdt.debug</module>
+    <module>eclipse.jdt.ui</module>
+
+    <module>eclipse.pde</module>
+    <module>eclipse.pde.build</module>
+    <module>eclipse.pde.ui</module>
+    <module>eclipse.platform</module>
+    <module>eclipse.platform.ui</module>
+    <module>eclipse.platform.common</module>
+    <module>eclipse.platform.debug</module>
+    <module>eclipse.platform.resources</module>
+    <module>eclipse.platform.runtime</module>
+    <module>eclipse.platform.swt</module>
+    <module>eclipse.platform.swt.binaries</module>
+    <module>eclipse.platform.team</module>
+    <module>eclipse.platform.text</module>
+    <module>eclipse.platform.ua</module>
+
+    <module>rt.equinox.bundles</module>
+    <module>rt.equinox.framework</module>
+    <module>rt.equinox.p2</module>
+
+    <module>eclipse.platform.releng</module>
+    <module>eclipse.platform.releng.tychoeclipsebuilder</module>
+-->
+  </modules>
+</project>

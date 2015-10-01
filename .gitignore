@@ -10,3 +10,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# From eclipse repository .gitignore
+target/
+bin/
+TMP/m2repo/
+settings.xml
+setup.sh
+*~
+*.bak
+workspace/
+.metadata/
+RemoteSystemsTempFiles/
