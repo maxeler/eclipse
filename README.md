@@ -33,7 +33,7 @@ git checkout R4_4_maintenance
 ```
 ### Build
 ```
-cd eclipse.jdt.core/org.eclipse.jdt.core
+cd eclipse/eclipse.jdt.core/org.eclipse.jdt.core
 mvn -P build-individual-bundles package
 ```
 ### Install
