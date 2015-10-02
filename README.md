@@ -1,6 +1,7 @@
 # Maxeler Eclipse Plugins
 
-## Eclipse Compiler for Java
+## Eclipse Compiler for Java [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=master)](https://travis-ci.org/maxeler/eclipse)
+
 Supports Maxeler Java syntax.
 
 ### Prerequisites
