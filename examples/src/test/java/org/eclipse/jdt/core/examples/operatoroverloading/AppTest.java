@@ -1,4 +1,4 @@
-package org.eclipse.jdt.core.examples;
+package org.eclipse.jdt.core.examples.operatoroverloading;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
