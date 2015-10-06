@@ -104,4 +104,16 @@ public class MyInteger {
 	public boolean gteAsRHS(int i) {
 		return i >= this.value;
 	}
+	
+	public boolean lt(MyInteger i) {
+		return this.value < i.getValue();
+	}
+	
+	public boolean lt(int i) {
+		return this.value < i;
+	}
+	
+	public boolean ltAsRHS(int i) {
+		return i < this.value;
+	}
 }

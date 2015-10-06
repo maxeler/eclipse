@@ -318,5 +318,75 @@ public class MyIntegerTest {
 		assertFalse(result);
 	}
 	
+	@Test
+	public void testLtMyIntegerWhenILessThanJ() {
+		final MyInteger i = new MyInteger(0);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i < j;
+		assertTrue(result);
+	}
 	
+	@Test
+	public void testLtMyIntegerWhenIEqualsJ() {
+		final MyInteger i = new MyInteger(1);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i < j;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtMyIntegerWhenIGreaterThanJ() {
+		final MyInteger i = new MyInteger(2);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i < j;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtIntWhenILessThanJ() {
+		final MyInteger i = new MyInteger(0);
+		final int j = 1;
+		final boolean result = i < j;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLtIntWhenIEqualsJ() {
+		final MyInteger i = new MyInteger(1);
+		final int j = 1;
+		final boolean result = i < j;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtIntWhenIGreaterThanJ() {
+		final MyInteger i = new MyInteger(2);
+		final int j = 1;
+		final boolean result = i < j;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtIntAsRHSWhenILessThanJ() {
+		final int j = 1;
+		final MyInteger i = new MyInteger(0);
+		final boolean result = j < i;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtIntAsRHSWhenIEqualsJ() {
+		final int j = 1;
+		final MyInteger i = new MyInteger(1);
+		final boolean result = j < i;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLtIntAsRHSWhenIGreaterThanJ() {
+		final int j = 1;
+		final MyInteger i = new MyInteger(2);
+		final boolean result = j < i;
+		assertTrue(result);
+	}
 }
