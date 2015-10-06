@@ -3,7 +3,6 @@ package org.eclipse.jdt.core.examples.operatoroverloading;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.eclipse.jdt.core.examples.operatoroverloading.MyInteger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -296,7 +295,7 @@ public class MyIntegerTest {
 	}
 	
 	@Test
-	public void testGtIntAsRHSWhenILessThanJ() {
+	public void testGteIntAsRHSWhenILessThanJ() {
 		final int j = 1;
 		final MyInteger i = new MyInteger(0);
 		final boolean result = j >= i;
@@ -304,7 +303,7 @@ public class MyIntegerTest {
 	}
 	
 	@Test
-	public void testGtIntAsRHSWhenIEqualsJ() {
+	public void testGteIntAsRHSWhenIEqualsJ() {
 		final int j = 1;
 		final MyInteger i = new MyInteger(1);
 		final boolean result = j >= i;
@@ -312,11 +311,12 @@ public class MyIntegerTest {
 	}
 	
 	@Test
-	public void testGtIntAsRHSWhenIGreaterThanJ() {
+	public void testGteIntAsRHSWhenIGreaterThanJ() {
 		final int j = 1;
 		final MyInteger i = new MyInteger(2);
 		final boolean result = j >= i;
 		assertFalse(result);
 	}
+	
 	
 }
