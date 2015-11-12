@@ -1,0 +1,10 @@
+/*/bin/
+*~
+*.rej
+*.bak
+javacore.*
+heapdump.*
+core.*
+Snap.*
+# maven
+/*/target/
