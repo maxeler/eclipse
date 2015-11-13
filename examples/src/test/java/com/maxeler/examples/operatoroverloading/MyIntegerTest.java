@@ -1,4 +1,4 @@
-package org.eclipse.jdt.core.examples.operatoroverloading;
+package com.maxeler.examples.operatoroverloading;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.maxeler.examples.operatoroverloading.MyInteger;
 
 public class MyIntegerTest {
 
@@ -388,5 +390,29 @@ public class MyIntegerTest {
 		final MyInteger i = new MyInteger(2);
 		final boolean result = j < i;
 		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteMyIntegerWhenILessThanJ() {
+		final MyInteger i = new MyInteger(0);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i <= j;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteMyIntegerWhenIEqualsJ() {
+		final MyInteger i = new MyInteger(1);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i <= j;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteMyIntegerWhenIGreaterThanJ() {
+		final MyInteger i = new MyInteger(2);
+		final MyInteger j = new MyInteger(1);
+		final boolean result = i <= j;
+		assertFalse(result);
 	}
 }

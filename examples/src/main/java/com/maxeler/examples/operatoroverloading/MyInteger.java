@@ -1,4 +1,4 @@
-package org.eclipse.jdt.core.examples.operatoroverloading;
+package com.maxeler.examples.operatoroverloading;
 
 
 public class MyInteger {
@@ -115,5 +115,17 @@ public class MyInteger {
 	
 	public boolean ltAsRHS(int i) {
 		return i < this.value;
+	}
+	
+	public boolean lte(MyInteger i) {
+		return this.value <= i.getValue();
+	}
+	
+	public boolean lte(int i) {
+		return this.value <= i;
+	}
+	
+	public boolean lteAsRHS(int i) {
+		return i <= this.value;
 	}
 }
