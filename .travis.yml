@@ -1,7 +1,10 @@
 language: java
 install: true
-script: mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles package
+script:
+  - mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles install
+  - mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
 branches:
   only:
     - master
     - R4_4_maintenance
+    - R4_4_maintenance-dev-maxj-editor

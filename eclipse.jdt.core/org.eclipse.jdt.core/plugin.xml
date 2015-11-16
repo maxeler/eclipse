@@ -229,7 +229,7 @@
 	<content-type id="javaSource" name="%javaSourceName" 
 		base-type="org.eclipse.core.runtime.text"
 		priority="high"				
-		file-extensions="java"/>
+		file-extensions="java,maxj"/>
 	<!-- declares a content type for Java class files -->
     <content-type id="javaClass" name="%javaClassName" 
         priority="high"				

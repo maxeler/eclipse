@@ -1,8 +1,18 @@
-# Maxeler Eclipse Plugins
+# Maxeler Eclipse Plug-ins [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=R4_4_maintenance)](https://travis-ci.org/maxeler/eclipse)
 
-## Eclipse Compiler for Java [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=R4_4_maintenance)](https://travis-ci.org/maxeler/eclipse)
+## [Eclipse Compiler for Java](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.core/org.eclipse.jdt.core)
+Supports **operator overloading**, which is part of Maxeler Java syntax.
 
-Supports Maxeler Java syntax.
+## [.MAXJ Editor](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.ui/org.eclipse.jdt.ui)
+Supports **MaxJ syntax** on .maxj files:
+  * Syntax highlighting
+  * Code proposal, code completion, code templates
+  * Refactoring
+  * Outline
+  * Search features
+
+***
+***
 
 ### Prerequisites
 #### Oracle Java 1.6 or higher
@@ -25,22 +35,26 @@ If the last line says "Client VM" instead of "Server VM" then you are running in
 * make sure **mvn** is available in your PATH
 * **_Notice:_** Apache 3.3.3 requires Java 7.
 
+***
+***
 
 ### Checkout
 Clone the repository and checkout the branch corresponding to your Eclipse version (e.g. Luna SR2):
 ```
 git clone https://github.com/maxeler/eclipse.git
 git checkout R4_4_maintenance
+cd eclipse
 ```
-### Build
+### Build each plug-in
 ```
-cd eclipse/eclipse.jdt.core/org.eclipse.jdt.core
-mvn -P build-individual-bundles package
+mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles package
+mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
 ```
 ### Install
-Copy the built plugin .jar file to your Eclipse plugins folder, replacing the original plugin (e.g. Luna SR2):
+Copy the built plug-in .jar files to your Eclipse plug-ins folder, replacing the original plug-ins (e.g. Luna SR2):
 ```
-cp target/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/org.eclipse.jdt.core_3.10.2.v20150120-1634.jar
+cp eclipse.jdt.core/org.eclipse.jdt.core/target/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/org.eclipse.jdt.core_3.10.2.v20150120-1634.jar
+cp eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/org.eclipse.jdt.ui_3.10.2.v20141014-1419.jar
 ```
 ### Run
 Launch Eclipse and import your MAX project source code as a Java Project.

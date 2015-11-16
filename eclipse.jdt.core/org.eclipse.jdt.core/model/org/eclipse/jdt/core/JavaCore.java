@@ -804,6 +804,18 @@ public final class JavaCore extends Plugin {
 	 */
 	public static final String COMPILER_PB_UNDOCUMENTED_EMPTY_BLOCK = PLUGIN_ID + ".compiler.problem.undocumentedEmptyBlock"; //$NON-NLS-1$
 	/**
+	 * Compiler option ID: Reporting assert statements.
+	 * <p>When enabled, the compiler will issue an error or a warning when an assert statement is detected.
+	 * <dl>
+	 * <dt>Option id:</dt><dd><code>"org.eclipse.jdt.core.compiler.problem.maxelerAssertStatement"</code></dd>
+	 * <dt>Possible values:</dt><dd><code>{ "error", "warning", "ignore" }</code></dd>
+	 * <dt>Default:</dt><dd><code>"ignore"</code></dd>
+	 * </dl>
+	 * @since 3.0
+	 * @category CompilerOptionID
+	 */
+	public static final String COMPILER_PB_MAXELER_ASSERT_STATEMENT = PLUGIN_ID + ".compiler.problem.maxelerAssertStatement"; //$NON-NLS-1$
+	/**
 	 * Compiler option ID: Reporting Finally Blocks Not Completing Normally.
 	 * <p>When enabled, the compiler will issue an error or a warning when a finally block does not complete normally.</p>
 	 * <dl>
@@ -2240,6 +2252,19 @@ public final class JavaCore extends Plugin {
 	 * @category CoreOptionID
 	 */
 	public static final String CORE_ENABLE_CLASSPATH_MULTIPLE_OUTPUT_LOCATIONS = PLUGIN_ID + ".classpath.multipleOutputLocations"; //$NON-NLS-1$
+	/**
+	 * Core option ID: Reporting an output location overlapping another source location.
+	 * <p> Indicate the severity of the problem reported when a source entry's output location overlaps another
+	 * source entry. </p>
+	 * 
+	 * <dl>
+	 * <dt>Option id:</dt><dd><code>"org.eclipse.jdt.core.classpath.outputOverlappingAnotherSource"</code></dd>
+	 * <dt>Possible values:</dt><dd><code>{ "error", "warning", "ignore" }</code></dd>
+	 * <dt>Default:</dt><dd><code>"warning"</code></dd>
+	 * </dl>
+	 * @since 3.6.4
+	 */
+	public static final String CORE_OUTPUT_LOCATION_OVERLAPPING_ANOTHER_SOURCE = PLUGIN_ID + ".classpath.outputOverlappingAnotherSource";  //$NON-NLS-1$
 	/**
 	 * Core option ID: Set the timeout value for retrieving the method's parameter names from javadoc.
 	 * <p>Timeout in milliseconds to retrieve the method's parameter names from javadoc.</p>
