@@ -1,12 +1,8 @@
 language: java
-before_install:
-  - sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
 install: true
 script:
   - mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles install
   - mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
-  - ./scripts/build-plexus-compiler-eclipse.sh
-  - mvn -f examples/pom.xml test
 branches:
   only:
     - master
