@@ -1,9 +1,9 @@
 # Maxeler Eclipse Plug-ins [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=R4_4_maintenance)](https://travis-ci.org/maxeler/eclipse)
 
-## [Eclipse Compiler for Java](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.core/org.eclipse.jdt.core)
+## [Eclipse Compiler for Java](https://github.com/maxeler/eclipse/tree/R4_4_maintenance/eclipse.jdt.core/org.eclipse.jdt.core)
 Supports **operator overloading**, which is part of Maxeler Java syntax.
 
-## [.MAXJ Editor](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.ui/org.eclipse.jdt.ui)
+## [.MAXJ Editor](https://github.com/maxeler/eclipse/tree/R4_4_maintenance/eclipse.jdt.ui/org.eclipse.jdt.ui)
 Supports **MaxJ syntax** on .maxj files:
   * Syntax highlighting
   * Code proposal, code completion, code templates
@@ -45,16 +45,35 @@ git clone https://github.com/maxeler/eclipse.git
 git checkout R4_4_maintenance
 cd eclipse
 ```
+
 ### Build each plug-in
 ```
 mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles package
 mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
 ```
+
 ### Install
-Copy the built plug-in .jar files to your Eclipse plug-ins folder, replacing the original plug-ins (e.g. Luna SR2):
+Copy the built plug-in .jar files to your Eclipse plug-ins folder (e.g. Luna SR2):
 ```
-cp eclipse.jdt.core/org.eclipse.jdt.core/target/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/org.eclipse.jdt.core_3.10.2.v20150120-1634.jar
-cp eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/org.eclipse.jdt.ui_3.10.2.v20141014-1419.jar
+cp eclipse.jdt.core/org.eclipse.jdt.core/target/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/
+cp eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/
 ```
+
+### Configure
+Edit the following configuration file, in your eclipse's configuration directory:
+```
+<path-to-eclipse-luna-SR2>/configuration/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
+```
+update the following lines:
+```
+org.eclipse.jdt.core,3.10.2.v20150120-1634,plugins/org.eclipse.jdt.core_3.10.2.v20150120-1634.jar,4,false
+org.eclipse.jdt.ui,3.10.2.v20141014-1419,plugins/org.eclipse.jdt.ui_3.10.2.v20141014-1419.jar,4,false
+```
+with the version in the MANIFEST.MF files and the correct file names:
+```
+org.eclipse.jdt.core,3.10.2.v20151116-1448,plugins/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar,4,false
+org.eclipse.jdt.ui,3.10.2.v20151116-1448,plugins/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar,4,false
+```
+
 ### Run
 Launch Eclipse and import your MAX project source code as a Java Project.
