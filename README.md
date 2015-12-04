@@ -1,9 +1,9 @@
-# Maxeler Eclipse Plug-ins [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=R4_4_maintenance)](https://travis-ci.org/maxeler/eclipse)
+# Maxeler Eclipse Plug-ins [![Build Status](https://travis-ci.org/maxeler/eclipse.svg?branch=master)](https://travis-ci.org/maxeler/eclipse)
 
-## [Eclipse Compiler for Java](https://github.com/maxeler/eclipse/tree/R4_4_maintenance/eclipse.jdt.core/org.eclipse.jdt.core)
+## [Eclipse Compiler for Java](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.core/org.eclipse.jdt.core)
 Supports **operator overloading**, which is part of Maxeler Java syntax.
 
-## [.MAXJ Editor](https://github.com/maxeler/eclipse/tree/R4_4_maintenance/eclipse.jdt.ui/org.eclipse.jdt.ui)
+## [.MAXJ Editor](https://github.com/maxeler/eclipse/tree/master/eclipse.jdt.ui/org.eclipse.jdt.ui)
 Supports **MaxJ syntax** on .maxj files:
   * Syntax highlighting
   * Code proposal, code completion, code templates

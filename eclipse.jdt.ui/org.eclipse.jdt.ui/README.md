@@ -7,7 +7,7 @@ Supports **MaxJ syntax** on **.maxj** files:
   * Search features
 
 #### Prerequisites
-*Check main [README.md](https://github.com/maxeler/eclipse/tree/R4_4_maintenance)*
+*Check main [README.md](https://github.com/maxeler/eclipse)*
 
 ### Checkout
 Clone the repository and checkout the branch corresponding to your Eclipse version (e.g. Luna SR2):
