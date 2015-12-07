@@ -415,4 +415,76 @@ public class MyIntegerTest {
 		final boolean result = i <= j;
 		assertFalse(result);
 	}
+	
+	@Test
+	public void testLteIntWhenILessThanJ() {
+		final MyInteger i = new MyInteger(0);
+		final int j = 1;
+		final boolean result = i <= j;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteIntWhenIEqualsJ() {
+		final MyInteger i = new MyInteger(1);
+		final int j = 1;
+		final boolean result = i <= j;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteIntWhenIGreaterThanJ() {
+		final MyInteger i = new MyInteger(2);
+		final int j = 1;
+		final boolean result = i <= j;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testLteIntAsRHSWhenILessThanJ() {
+		final int j = 0;
+		final MyInteger i = new MyInteger(1);
+		final boolean result = j <= i;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteIntAsRHSWhenIEqualsJ() {
+		final int j = 1;
+		final MyInteger i = new MyInteger(1);
+		final boolean result = j <= i;
+		assertTrue(result);
+	}
+	
+	@Test
+	public void testLteIntAsRHSWhenIGreaterThanJ() {
+		final int j = 2;
+		final MyInteger i = new MyInteger(1);
+		final boolean result = j <= i;
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testOrMyInteger() {
+		final MyInteger i = new MyInteger(1);
+		final MyInteger j = new MyInteger(3);
+		final MyInteger result = i | j;
+		assertTrue(result.getValue() == 3);
+	}
+	
+	@Test
+	public void testOrInt() {
+		final MyInteger i = new MyInteger(1);
+		final int j = 3;
+		final MyInteger result = i | j;
+		assertTrue(result.getValue() == 3);
+	}
+	
+	@Test
+	public void testOrAsRightAndSide() {
+		final int j = 3;
+		final MyInteger i = new MyInteger(1);
+		final MyInteger result = j | i;
+		assertTrue(result.getValue() == 3);
+	}
 }
