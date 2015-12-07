@@ -60,16 +60,23 @@ cp eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.j
 ```
 
 ### Configure
-Edit the following configuration file, in your eclipse's configuration directory:
+Copy the "Bundle-Version" from the built MANIFEST.MF files:
 ```
-<path-to-eclipse-luna-SR2>/configuration/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
+$ grep -e "Bundle-Version: " eclipse.jdt.core/org.eclipse.jdt.core/target/MANIFEST.MF
+Bundle-Version: 3.10.2.v20151116-1448
+$ grep -e "Bundle-Version: " eclipse.jdt.ui/org.eclipse.jdt.ui/target/MANIFEST.MF
+Bundle-Version: 3.10.2.v20151116-1448
+```
+Edit the following configuration file, in eclipse's configuration directory:
+```
+<path-to-eclipse-luna-SR2>/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
 ```
 update the following lines:
 ```
 org.eclipse.jdt.core,3.10.2.v20150120-1634,plugins/org.eclipse.jdt.core_3.10.2.v20150120-1634.jar,4,false
 org.eclipse.jdt.ui,3.10.2.v20141014-1419,plugins/org.eclipse.jdt.ui_3.10.2.v20141014-1419.jar,4,false
 ```
-with the version in the MANIFEST.MF files and the correct file names:
+with the correct "Bundle-Version" and file names:
 ```
 org.eclipse.jdt.core,3.10.2.v20151116-1448,plugins/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar,4,false
 org.eclipse.jdt.ui,3.10.2.v20151116-1448,plugins/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar,4,false
