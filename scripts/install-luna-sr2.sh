@@ -1,4 +1,5 @@
 #!/bin/sh
+usage_str="Usage: $0 <path-to-eclipse-luna-SR2>"
 error_msg="Make sure the correct Eclipse Luna SR2 path has been passed"
 
 checkConfigFile () {
@@ -73,8 +74,12 @@ installPlugin () {
 }
 
 if [ $# -lt 1 ]; then
-  echo "Usage: install.sh <path-to-eclipse-luna-SR2>"
+  echo $usage_str
   exit 1
+fi
+if [ "$1" = "-h" -o "$1" = "--help" ]; then
+  echo $usage_str
+  exit 0
 fi
 
 plugins_dir="$1/plugins"
