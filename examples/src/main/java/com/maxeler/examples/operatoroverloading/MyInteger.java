@@ -128,4 +128,17 @@ public class MyInteger {
 	public boolean lteAsRHS(int i) {
 		return i <= this.value;
 	}
+	
+	public MyInteger or(MyInteger i) {
+		return new MyInteger(this.value | i.getValue());
+	}
+	
+	public MyInteger or(int i) {
+		return new MyInteger(this.value | i);
+	}
+	
+	public MyInteger orAsRHS(int i) {
+		return this | i;
+	}
+ 
 }
