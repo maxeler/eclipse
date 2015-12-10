@@ -69,7 +69,7 @@ installPlugin () {
   cp $plugin_file $plugins_dir
   ec=$?
   if [ $ec -ne 0 ]; then
-    echo "An error has occured while copying $plugin_file to plugins directory: $plugins_dir"
+    echo "An error has occurred while copying $plugin_file to plugins directory: $plugins_dir"
     exit $ec
   fi
 	editConfigurationFile $plugin_str $plugin_replacement_str $config_file
@@ -86,7 +86,7 @@ editConfigurationFile () {
 	sed -i $sed_args "s/$plugin_str/$plugin_replacement_str/g" $config_file
   ec=$?
   if [ $ec -ne 0 ]; then
-    echo "An error has occured while editing the configuration file: $config_file"
+    echo "An error has occurred while editing the configuration file: $config_file"
     exit $ec
   fi
 }
