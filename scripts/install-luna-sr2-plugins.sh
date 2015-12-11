@@ -2,13 +2,6 @@
 usage_str="Usage: $0 <path-to-eclipse-luna-SR2> [-revert]"
 error_msg="Make sure the correct Eclipse Luna SR2 path has been passed"
 
-os=`uname`
-if [ $os = "Darwin" ]; then
-	sed_args="''"
-else
-	unset sed_args
-fi
-
 checkConfigFile () {
   local config_file
   config_file=$1
@@ -83,7 +76,12 @@ editConfigurationFile () {
 	plugin_str=$1
 	plugin_replacement_str=$2
 	config_file=$3
-	sed -i $sed_args "s/$plugin_str/$plugin_replacement_str/g" $config_file
+	local os=`uname`
+	if [ $os = "Darwin" ]; then
+		sed -i '' "s/$plugin_str/$plugin_replacement_str/g" $config_file
+	else
+		sed -i "s/$plugin_str/$plugin_replacement_str/g" $config_file
+	fi
   ec=$?
   if [ $ec -ne 0 ]; then
     echo "An error has occurred while editing the configuration file: $config_file"
