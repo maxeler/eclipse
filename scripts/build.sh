@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-mvn -P build-individual-bundles install -f eclipse/eclipse-platform-parent/pom.xml
-mvn -P build-individual-bundles install -f eclipse/eclipse.jdt.core/pom.xml
-mvn -P build-individual-bundles install -f eclipse/eclipse.jdt.core/org.eclipse.jdt.core/pom.xml
+mvn -P build-individual-bundles install -f eclipse-platform-parent/pom.xml
+mvn -P build-individual-bundles install -f eclipse.jdt.core/pom.xml
+mvn -P build-individual-bundles install -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml
 
 git clone -b eclipse-3.10.2-SNAPSHOT https://github.com/maxeler/plexus-compiler
 mvn install -f plexus-compiler/pom.xml
