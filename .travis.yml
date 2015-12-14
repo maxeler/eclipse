@@ -1,6 +1,8 @@
 language: java
 install: true
 script: ./scripts/build.sh
+jdk:
+  - oraclejdk8
 branches:
   only:
     - master
