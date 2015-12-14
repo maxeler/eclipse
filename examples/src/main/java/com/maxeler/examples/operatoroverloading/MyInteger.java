@@ -3,7 +3,7 @@ package com.maxeler.examples.operatoroverloading;
 
 public class MyInteger {
 
-	private int value;
+	private final int value;
 	
 	public MyInteger(int v) {
 		this.value = v;
