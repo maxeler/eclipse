@@ -7,3 +7,4 @@ branches:
   only:
     - master
     - R4_4_maintenance
+    - R4_4_maintenance-example-compilation
