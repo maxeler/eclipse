@@ -465,6 +465,30 @@ public class MyIntegerTest {
 	}
 	
 	@Test
+	public void testMulMyInteger() {
+		final MyInteger i = new MyInteger(2);
+		final MyInteger j = new MyInteger(3);
+		final MyInteger result = i * j;
+		assertTrue(result.getValue() == 6);
+	}
+	
+	@Test
+	public void testMulInt() {
+		final MyInteger i = new MyInteger(2);
+		final int j = 3;
+		final MyInteger result = i * j;
+		assertTrue(result.getValue() == 6);
+	}
+	
+	@Test
+	public void testMulIntAsRightHandSide() {
+		final int j = 3;
+		final MyInteger i = new MyInteger(2);
+		final MyInteger result = j * i;
+		assertTrue(result.getValue() == 6);
+	}
+	
+	@Test
 	public void testOrMyInteger() {
 		final MyInteger i = new MyInteger(1);
 		final MyInteger j = new MyInteger(3);
@@ -486,5 +510,53 @@ public class MyIntegerTest {
 		final MyInteger i = new MyInteger(1);
 		final MyInteger result = j | i;
 		assertTrue(result.getValue() == 3);
+	}
+	
+	@Test
+	public void testSubMyInteger() {
+		final MyInteger i = new MyInteger(1);
+		final MyInteger j = new MyInteger(3);
+		final MyInteger result = i - j;
+		assertTrue(result.getValue() == -2);
+	}
+	
+	@Test
+	public void testSubInt() {
+		final MyInteger i = new MyInteger(1);
+		final int j = 3;
+		final MyInteger result = i - j;
+		assertTrue(result.getValue() == -2);
+	}
+	
+	@Test
+	public void testSubIntAsRightHandSide() {
+		final int j = 3;
+		final MyInteger i = new MyInteger(1);
+		final MyInteger result = j - i;
+		assertTrue(result.getValue() == 2);
+	}
+	
+	@Test
+	public void testXorMyInteger() {
+		final MyInteger i = new MyInteger(1);
+		final MyInteger j = new MyInteger(3);
+		final MyInteger result = i ^ j;
+		assertTrue(result.getValue() == 2);
+	}
+	
+	@Test
+	public void testXorInt() {
+		final MyInteger i = new MyInteger(1);
+		final int j = 3;
+		final MyInteger result = i ^ j;
+		assertTrue(result.getValue() == 2);
+	}
+	
+	@Test
+	public void testXorIntAsRightHandSide() {
+		final int j = 3;
+		final MyInteger i = new MyInteger(1);
+		final MyInteger result = j ^ i;
+		assertTrue(result.getValue() == 2);
 	}
 }
