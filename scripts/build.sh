@@ -10,4 +10,6 @@ mvn install -f plexus-compiler/plexus-compiler-api/pom.xml
 mvn install -f plexus-compiler/plexus-compilers/pom.xml
 mvn install -f plexus-compiler/plexus-compilers/plexus-compiler-eclipse/pom.xml
 
+mvn -P build-individual-bundles -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml
+
 mvn test -f examples/pom.xml

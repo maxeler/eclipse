@@ -1,8 +1,6 @@
 language: java
 install: true
-script:
-  - mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles install
-  - mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
+script: ./scripts/build.sh
 branches:
   only:
     - master
