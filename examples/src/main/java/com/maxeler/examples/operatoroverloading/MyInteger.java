@@ -129,6 +129,18 @@ public class MyInteger {
 		return i <= this.value;
 	}
 	
+	public MyInteger mul(MyInteger i) {
+		return new MyInteger(this.value * i.getValue());
+	}
+	
+	public MyInteger mul(int i) {
+		return new MyInteger(this.value * i);
+	}
+	
+	public MyInteger mulAsRHS(int i) {
+		return new MyInteger(this.value * i);
+	}
+	
 	public MyInteger or(MyInteger i) {
 		return new MyInteger(this.value | i.getValue());
 	}
@@ -140,5 +152,28 @@ public class MyInteger {
 	public MyInteger orAsRHS(int i) {
 		return this | i;
 	}
- 
+
+	public MyInteger sub(MyInteger i) {
+		return new MyInteger(this.value - i.getValue());
+	}
+	
+	public MyInteger sub(int i) {
+		return new MyInteger(this.value - i);
+	}
+	
+	public MyInteger subAsRHS(int i) {
+		return new MyInteger(i - this.value);
+	}
+	
+	public MyInteger xor(MyInteger i) {
+		return new MyInteger(this.value ^ i.getValue());
+	}
+	
+	public MyInteger xor(int i) {
+		return new MyInteger(this.value ^ i);
+	}
+	
+	public MyInteger xorAsRHS(int i) {
+		return new MyInteger(this.value ^ i);
+	}
 }
