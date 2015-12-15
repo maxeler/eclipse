@@ -2,7 +2,7 @@
 * Operator overloading
 
 #### Prerequisites
-*Check main [README.md](https://github.com/maxeler/eclipse/tree/R4_4_maintenance)*
+*Check main [README.md](https://github.com/maxeler/eclipse)*
 
 ## Import to Eclipse
 Import the examples as a Java Project. The examples have test classes which demonstrate the the plug-ins' features.
