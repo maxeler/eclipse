@@ -42,24 +42,30 @@ If the last line says "Client VM" instead of "Server VM" then you are running in
 Clone the repository and checkout the branch corresponding to your Eclipse version (e.g. Luna SR2):
 ```
 git clone https://github.com/maxeler/eclipse.git
-git checkout R4_4_maintenance
 cd eclipse
+git checkout R4_4_maintenance
 ```
 
-### Build each plug-in
+### Install
+#### Script
+Run the `./install.sh ECLIPSE_DIR` script to compile, copy the plugins, and update the chosen eclipse installation.
+
+#### Manual
+##### Build Each Plug-in
 ```
 mvn -f eclipse.jdt.core/org.eclipse.jdt.core/pom.xml -P build-individual-bundles package
 mvn -f eclipse.jdt.ui/org.eclipse.jdt.ui/pom.xml -P build-individual-bundles package
 ```
 
-### Install
+##### Copy into eclipse
+
 Copy the built plug-in .jar files to your Eclipse plug-ins folder (e.g. Luna SR2):
 ```
 cp eclipse.jdt.core/org.eclipse.jdt.core/target/org.eclipse.jdt.core-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/
 cp eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-3.10.2-SNAPSHOT.jar <path-to-eclipse-luna-SR2>/plugins/
 ```
 
-### Configure
+##### Configure Eclipse
 Copy the "Bundle-Version" from the built MANIFEST.MF files:
 ```
 $ grep -e "Bundle-Version: " eclipse.jdt.core/org.eclipse.jdt.core/target/MANIFEST.MF
