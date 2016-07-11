@@ -1,4 +1,0 @@
-include $(MAXTEST_INCLUDE)
-
-setup:
-	true
