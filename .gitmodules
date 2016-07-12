@@ -1,0 +1,3 @@
+[submodule "eclipse.platform.releng.aggregator"]
+	path = eclipse.platform.releng.aggregator
+	url = https://github.com/maxeler/eclipse.platform.releng.aggregator
