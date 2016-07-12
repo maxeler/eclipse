@@ -1,9 +1,17 @@
 language: java
+git:
+  submodules: false 
 install: true
-script: ./scripts/build.sh
+script:
+  - ./scripts/build.sh
 jdk:
   - oraclejdk8
-branches:
-  only:
-    - master
-    - R4_4_maintenance
+deploy:
+  provider: releases
+  api_key:
+    secure: WsDJHIMmVtTNSVfS8AW5MtpPn5EaGlOeDcOCcbPhMTS9B3BZmuxPLmvPpH0MP8rskiSO/5iS89v2kmts0JaEiO0IqBYdnLI9wZF5ewpRM8cDFcS8MJEpk4zd/9sx1bxUsTO7VZumqrubjSd/AqcYNzeQ1/AIoZs3jyhzp11wAw4g1SkHH8tTIy61mP/+bbNnrhr6nQN6IXKYsMNcRZvuJOB0kvdgr4wYLR9sWKGxAIHvtM4vW3Rg58byOJzGEmytR1otYEb5XImy9QCgZANzx984lKZHIwbO24YTNPF3CoLhsqpcVepy/9mRw0IaKmocZj9XF38a3vhznRY+lhwO4Z6qX2OxoyfwhQ3tYb4nxJCTPJ0XEOYEMZZUkf58XEBI0sHCdato6Yv6FoXxZ+oJGqBtvLIR6Z6VEO/JOowZ2hqUbBJLL6sWnC4Otx+YqjYb+Y/xiPOTiVIYKUYfNMbxg53m2KjNhFpfDgECCRMFMsyJjZelIa9hCI8An86TQNJuBC6FfGIbpSY28vw2wQKlri7Q6TCVnZqUPmtZtLeiyQtN1vnzKPAqhJ6n1cEaIIKbdosuK9c7uAa3kDrdQLRfX34YLwKnQsC3NBFfi38cIG6DbiZUO9XwBdb7+ZxNrE+XbG3tfQa//1Kies9SCrm/iJfjrQB4nvHn2GMb4BlNJd4=
+  file:
+    - eclipse.platform.releng.aggregator/eclipse.jdt.core/org.eclipse.jdt.core/target/org.eclipse.jdt.core-*-SNAPSHOT.jar
+    - eclipse.platform.releng.aggregator/eclipse.jdt.ui/org.eclipse.jdt.ui/target/org.eclipse.jdt.ui-*-SNAPSHOT.jar
+  on:
+    repo: maxeler/eclipse
