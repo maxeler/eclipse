@@ -6,6 +6,11 @@ INSTALL_SCRIPTS=scripts/install-linux-mac.sh
 # TODO: fix Windows install batch script
 # INSTALL_SCRIPTS+=install-windows.bat
 
+build_installer () {
+	javac $(find installer -name MaxelerECJInstaller.java)
+	jar cvfe $RELEASE_DIR/Install.jar com.maxeler.eclipse.installer.MaxelerECJInstaller -C installer .
+}
+
 copy_plugin () {
   local plugin_name
   local plugin_build_dir
@@ -25,6 +30,8 @@ cp $INSTALL_SCRIPTS $RELEASE_DIR/
 
 copy_plugin "org.eclipse.jdt.core" "eclipse.platform.releng.aggregator/eclipse.jdt.core/org.eclipse.jdt.core/target"
 copy_plugin "org.eclipse.jdt.ui" "eclipse.platform.releng.aggregator/eclipse.jdt.ui/org.eclipse.jdt.ui/target"
+
+build_installer
 
 tar czf $RELEASE_DIR.tar.gz $RELEASE_DIR
 
