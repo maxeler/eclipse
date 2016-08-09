@@ -1,7 +1,7 @@
 #!/bin/sh
 
-usage_str="Usage: $0 <path-to-eclipse-luna-SR2> [-revert]"
-error_msg="Make sure the correct Eclipse Luna SR2 path has been passed"
+usage_str="Usage: $0 <path-to-eclipse> [-revert]"
+error_msg="Make sure the correct Eclipse path has been passed"
 
 checkConfigFile () {
   local config_file
