@@ -1,6 +1,6 @@
 #!/bin/sh
 
-usage_str="Usage: $0 <path-to-eclipse> [-revert]"
+usage_str="Usage: $0 <path-to-eclipse> [--revert]"
 error_msg="Make sure the correct Eclipse path has been passed"
 
 checkConfigFile () {
@@ -180,7 +180,14 @@ config_file="$1/configuration/org.eclipse.equinox.simpleconfigurator/bundles.inf
 checkPluginsDir $plugins_dir
 checkConfigFile $config_file
 
-if [ "$2" = "-revert" ]; then
+which java > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+  java -jar Install.jar $1 $2
+  exit $?
+fi
+
+if [ "$2" = "--revert" ]; then
   jdtcore_file=$(findPlugin 'org.eclipse.jdt.core*MAXELER*.jar' $plugins_dir)
   if [ $? -ne 0 ]; then
     echo $jdtcore_file
