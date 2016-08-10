@@ -4,6 +4,7 @@ git:
 install: true
 script:
   - ./scripts/build.sh
+  - ./scripts/test.sh
 jdk:
   - oraclejdk8
 
