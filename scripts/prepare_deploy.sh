@@ -2,9 +2,8 @@
 
 RELEASE_DIR=maxeler-eclipse-plugin-$TRAVIS_TAG
 VERSION=$TRAVIS_TAG
-INSTALL_SCRIPTS=scripts/install-linux-mac.sh
-# TODO: fix Windows install batch script
-# INSTALL_SCRIPTS+=install-windows.bat
+LINUX_IOS_INSTALL_SCRIPT=install-linux-mac.sh
+WINDOWS_INSTALL_SCRIPT=install-windows.bat
 
 build_installer () {
 	javac $(find installer -name MaxelerECJInstaller.java)
@@ -26,15 +25,21 @@ copy_plugin () {
 
 mkdir -p $RELEASE_DIR/plugins
 
-cp $INSTALL_SCRIPTS $RELEASE_DIR/
-
 copy_plugin "org.eclipse.jdt.core" "eclipse.platform.releng.aggregator/eclipse.jdt.core/org.eclipse.jdt.core/target"
 copy_plugin "org.eclipse.jdt.ui" "eclipse.platform.releng.aggregator/eclipse.jdt.ui/org.eclipse.jdt.ui/target"
 
 build_installer
 
+cp scripts/$LINUX_IOS_INSTALL_SCRIPT $RELEASE_DIR/
+
 tar czf $RELEASE_DIR.tar.gz $RELEASE_DIR
 
-# TODO: add a .zip package as well, because Windows
+cp scripts/$WINDOWS_INSTALL_SCRIPT $RELEASE_DIR/
+
+rm -r $RELEASE_DIR/$LINUX_IOS_INSTALL_SCRIPT
+
+zip -r $RELEASE_DIR.zip $RELEASE_DIR 
+
+rm -rf $RELEASE_DIR
 
 exit 0
