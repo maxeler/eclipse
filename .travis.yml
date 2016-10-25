@@ -1,6 +1,6 @@
 language: java
 git:
-  submodules: false 
+  submodules: false
 install: true
 script:
   - ./scripts/build.sh
@@ -15,10 +15,11 @@ deploy:
   skip_cleanup: true
   overwrite: true
   api_key:
-    secure: WsDJHIMmVtTNSVfS8AW5MtpPn5EaGlOeDcOCcbPhMTS9B3BZmuxPLmvPpH0MP8rskiSO/5iS89v2kmts0JaEiO0IqBYdnLI9wZF5ewpRM8cDFcS8MJEpk4zd/9sx1bxUsTO7VZumqrubjSd/AqcYNzeQ1/AIoZs3jyhzp11wAw4g1SkHH8tTIy61mP/+bbNnrhr6nQN6IXKYsMNcRZvuJOB0kvdgr4wYLR9sWKGxAIHvtM4vW3Rg58byOJzGEmytR1otYEb5XImy9QCgZANzx984lKZHIwbO24YTNPF3CoLhsqpcVepy/9mRw0IaKmocZj9XF38a3vhznRY+lhwO4Z6qX2OxoyfwhQ3tYb4nxJCTPJ0XEOYEMZZUkf58XEBI0sHCdato6Yv6FoXxZ+oJGqBtvLIR6Z6VEO/JOowZ2hqUbBJLL6sWnC4Otx+YqjYb+Y/xiPOTiVIYKUYfNMbxg53m2KjNhFpfDgECCRMFMsyJjZelIa9hCI8An86TQNJuBC6FfGIbpSY28vw2wQKlri7Q6TCVnZqUPmtZtLeiyQtN1vnzKPAqhJ6n1cEaIIKbdosuK9c7uAa3kDrdQLRfX34YLwKnQsC3NBFfi38cIG6DbiZUO9XwBdb7+ZxNrE+XbG3tfQa//1Kies9SCrm/iJfjrQB4nvHn2GMb4BlNJd4=
+    secure: QNshVQLZ81QdFFlKqIplJG7W9MMpO5YO8Syk0R91kNXBIVy4EFCMWNjz9ejErb4RBp9aPv1XoyX9W4i+Mc1JQLFW4rahtaT02dsvk6rQcRE3ysGRVJYE7Ltui6t63wCwRxUYhL5F1sGULCXpDxHVGQSRFQnL/QVQx8ATMO/JXH2Q9rCbu20VktxcTcDUeJlbEEtlEdiqwlBuaESm2hDxSM5c2565t3u2ygvokohm6BUtLnvgH4LIqOUAVRiTUgsOgYVQuADn2RSs/iQ9TrBFWc1dZzcRjZH3XjSU95QOrFHPcIAN3VEQIoJ/rb6GvPdkkj8FJQtKOJepYy+gMywUnSEiWq9W/V7cr4IOVZ/4mTnfwazJzGdeKW7+g381SOy+nREzwV2sHwkCnFU2NAGxutHLF9sb2775d1l/LAmaJgCpXJwMYYXMcnzAIC3D1ofRFFkURgnVN+uvWyGWlauho109CSdxp5dZra85Ckj7q4YE0FsBMz0NMHq54HSOs5Fhxn8wghfwiMtYNoqxM6ekqPR7hR+RClQhdXYxdf4xUyxB/WzDDV/2dv4ESge1dY21Pwk/5gFXfXHUQQob9dSH0t3Uaoj1JDqIhJ/fICJTqx7mXT5ReD65rhmb0HucJnwPlxT/t9mYEswymY0u9xCFPzsukEzXi2+py1H0LnG6g8s=
   file:
-    - maxeler-eclipse-plugin-$TRAVIS_TAG.tar.gz
-    - maxeler-eclipse-plugin-$TRAVIS_TAG.zip
+   - maxeler-eclipse-plugin-$TRAVIS_TAG.tar.gz
+   - maxeler-eclipse-plugin-$TRAVIS_TAG.zip
   on:
     repo: maxeler/eclipse
+    branch: Luna-refactoring
     tags: true
