@@ -30,6 +30,12 @@ copy_plugin "org.eclipse.jdt.ui" "eclipse.platform.releng.aggregator/eclipse.jdt
 
 build_installer
 
+export TRAVIS_TAG=$VERSION && ant -f eclipse.platform.releng.aggregator/eclipse.jdt.core/org.eclipse.jdt.core/scripts/export-ecj.xml
+
+cp eclipse.platform.releng.aggregator/ecj-export/ecj-$VERSION.jar $RELEASE_DIR/
+
+rm -rf eclipse.platform.releng.aggregator/ecj-export
+
 cp scripts/$LINUX_IOS_INSTALL_SCRIPT $RELEASE_DIR/
 
 tar czf $RELEASE_DIR.tar.gz $RELEASE_DIR
